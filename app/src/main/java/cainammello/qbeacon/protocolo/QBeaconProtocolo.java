@@ -4,8 +4,11 @@ import android.util.Log;
 
 import com.orm.SugarRecord;
 
+import cainammello.qbeacon.model.Bloco;
+import cainammello.qbeacon.model.Campus;
 import cainammello.qbeacon.model.Disciplina;
 import cainammello.qbeacon.model.Docente;
+import cainammello.qbeacon.model.Sala;
 
 /**
  * Created by cainammello on 11/3/16.
@@ -13,6 +16,30 @@ import cainammello.qbeacon.model.Docente;
 public class QBeaconProtocolo {
 
     private QBeaconProtocolo() {}
+
+    public static Sala extrairSala(String mensagem) {
+
+        String msg = mensagem.substring(0);
+        int byte1 = Character.getNumericValue(msg.charAt(0));
+
+        int value = byte1;
+        Log.i("DEBUG", "Find sala " + value);
+
+        return SugarRecord.findById(Sala.class, value);
+
+    }
+
+    public static Bloco extrairBloco(String mensagem) {
+
+        String msg = mensagem.substring(1);
+        int byte1 = Character.getNumericValue(msg.charAt(0));
+
+        int value = byte1;
+        Log.i("DEBUG", "Find bloco " + value);
+
+        return SugarRecord.findById(Bloco.class, value);
+
+    }
 
     public static Docente extrairDocente(String mensagem) {
 
@@ -37,6 +64,18 @@ public class QBeaconProtocolo {
         Log.i("DEBUG", "Find disciplina " + value);
 
         return SugarRecord.findById(Disciplina.class, value);
+
+    }
+
+    public static Campus extrairCampus(String mensagem) {
+
+        String msg = mensagem.substring(5);
+        int byte1 = Character.getNumericValue(msg.charAt(0));
+
+        int value = byte1;
+        Log.i("DEBUG", "Find campus " + value);
+
+        return SugarRecord.findById(Campus.class, value);
 
     }
 

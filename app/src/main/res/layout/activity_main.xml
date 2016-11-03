@@ -10,19 +10,57 @@
     android:orientation="vertical"
     tools:context="cainammello.qbeacon.MainActivity">
 
-    <TextView
-        android:id="@+id/docente"
+    <ImageView
+        android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:textSize="24dp"/>
+        android:src="@drawable/qbeacon_icon"
+        android:layout_gravity="center_horizontal"/>
 
-    <TextView
-        android:id="@+id/disciplina"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:textSize="24dp"/>
 
+
+            <TextView
+                android:id="@+id/sala"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sala"
+                android:textSize="24dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="70dp"/>
+
+            <TextView
+                android:id="@+id/bloco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bloco"
+                android:textSize="24dp"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <TextView
+                android:id="@+id/docente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Docente"
+                android:textSize="24dp"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <TextView
+                android:id="@+id/disciplina"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Disciplina"
+                android:textSize="24dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/campus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Campus"
+                android:textSize="24dp"
+                android:layout_gravity="center_horizontal"
+                />
 
 </LinearLayout>

@@ -7,6 +7,7 @@ import com.orm.SugarRecord;
  */
 public class Sala extends SugarRecord {
 
+    private int key;
     private String salaNumero;
 
     public Sala() {
@@ -24,10 +25,19 @@ public class Sala extends SugarRecord {
         this.salaNumero = salaNumero;
     }
 
+    public int getKey() {
+        return key;
+    }
+
+    public void setKey(int key) {
+        this.key = key;
+    }
+
     @Override
     public String toString() {
         return "Sala{" +
-                "salaNumero='" + salaNumero + '\'' +
+                "key=" + key +
+                ", salaNumero='" + salaNumero + '\'' +
                 '}';
     }
 }

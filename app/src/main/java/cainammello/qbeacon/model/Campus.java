@@ -7,6 +7,7 @@ import com.orm.SugarRecord;
  */
 public class Campus extends SugarRecord{
 
+    private int key;
     private String nomeCampus;
 
     public Campus() {
@@ -24,10 +25,19 @@ public class Campus extends SugarRecord{
         this.nomeCampus = nomeCampus;
     }
 
+    public int getKey() {
+        return key;
+    }
+
+    public void setKey(int key) {
+        this.key = key;
+    }
+
     @Override
     public String toString() {
         return "Campus{" +
-                "nomeCampus='" + nomeCampus + '\'' +
+                "key=" + key +
+                ", nomeCampus='" + nomeCampus + '\'' +
                 '}';
     }
 }

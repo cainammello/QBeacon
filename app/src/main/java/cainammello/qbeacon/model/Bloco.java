@@ -1,5 +1,4 @@
 package cainammello.qbeacon.model;
-
 import com.orm.SugarRecord;
 
 /**
@@ -7,27 +6,31 @@ import com.orm.SugarRecord;
  */
 public class Bloco extends SugarRecord {
 
-    private String blocoNumero;
+    private int key;
+    private String name;
 
     public Bloco() {
 
     }
-    public Bloco(String blocoNumero) {
-        this.blocoNumero = blocoNumero;
+
+    public Bloco(String name) {
+        this.name = name;
     }
 
-    public String getBlocoNumero() {
-        return blocoNumero;
+    public int getKey() {
+        return key;
     }
 
-    public void setBlocoNumero(String blocoNumero) {
-        this.blocoNumero = blocoNumero;
+    public void setKey(int key) {
+        this.key = key;
     }
 
-    @Override
-    public String toString() {
-        return "Bloco{" +
-                "blocoNumero='" + blocoNumero + '\'' +
-                '}';
+    public String getName() {
+        return name;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 }

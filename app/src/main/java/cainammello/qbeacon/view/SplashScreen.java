@@ -1,14 +1,10 @@
-package cainammello.qbeacon.splash.screen;
+package cainammello.qbeacon.view;
 
 import android.content.Intent;
 import android.os.Handler;
-import android.os.PersistableBundle;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
-import cainammello.qbeacon.MainActivity;
 import cainammello.qbeacon.R;
 
 public class SplashScreen extends ActionBarActivity implements Runnable{

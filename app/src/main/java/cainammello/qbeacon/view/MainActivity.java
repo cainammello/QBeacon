@@ -1,4 +1,4 @@
-package cainammello.qbeacon;
+package cainammello.qbeacon.view;
 
 import android.os.RemoteException;
 import android.support.v7.app.AppCompatActivity;
@@ -17,18 +17,24 @@ import org.altbeacon.beacon.Region;
 import java.util.Collection;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cainammello.qbeacon.R;
 import cainammello.qbeacon.model.Bloco;
 import cainammello.qbeacon.model.Campus;
 import cainammello.qbeacon.model.Disciplina;
 import cainammello.qbeacon.model.Docente;
 import cainammello.qbeacon.model.Sala;
 import cainammello.qbeacon.protocolo.QBeaconProtocolo;
+import cainammello.qbeacon.service.updateAPI.BlocoApi;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements BeaconConsumer {
 
     protected static final String TAG = "DEBUG ";
     private BeaconManager beaconManager;
 
+    //instanciando os componentes da tela
     @BindView (R.id.sala)
     TextView tvSala;
 
@@ -49,11 +55,15 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //iniciando os componentes com o ButterKnife
         ButterKnife.bind(this);
 
+        //iniciando o banco de dados com o SugarContext
         SugarContext.init(this);
 
+
         beaconManager = BeaconManager.getInstanceForApplication(this);
+        //informar para a aplicação qual tipo de beacon ela vai escanear (no caso Ibeacons)
         beaconManager.getBeaconParsers().add(new BeaconParser(). setBeaconLayout("m:0-3=4c000215,i:4-19,i:20-21,i:22-23,p:24-24"));
 
         beaconManager.bind(this);
@@ -66,6 +76,17 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
 
         //iniciaBanco();
 
+        BlocoApi.getInstance().getAll(new Callback() {
+            @Override
+            public void onResponse(Call call, Response response) {
+                Log.i("DEBUG", "Received: " + response.body().toString());
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+                Log.i("DEBUG", "Received: Failed!");
+            }
+        });
     }
 
     @Override
@@ -105,22 +126,23 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
             public void didRangeBeaconsInRegion(Collection<Beacon> beacons, Region region) {
                 if (beacons.size() > 0) {
 
+                    //instancia o beacon
                     Beacon b = beacons.iterator().next();
                     Log.i(TAG, "Recebendo nome: " + b.getBluetoothName());
 
-
+                    //alimenta os objetos com os dados que veem do beacon
                     final Sala sala = QBeaconProtocolo.extrairSala(b.getBluetoothName());
                     final Bloco bloco = QBeaconProtocolo.extrairBloco(b.getBluetoothName());
                     final Docente docente = QBeaconProtocolo.extrairDocente(b.getBluetoothName());
                     final Disciplina disciplina = QBeaconProtocolo.extrairDisciplina(b.getBluetoothName());
                     final Campus campus = QBeaconProtocolo.extrairCampus(b.getBluetoothName());
 
-
+                    //passa os valores dos objetos para os componentes da tela
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             tvSala.setText(sala != null? sala.getSalaNumero(): "NULL");
-                            tvBloco.setText(bloco != null? bloco.getBlocoNumero(): "NULL");
+                            tvBloco.setText(bloco != null? bloco.getName(): "NULL");
                             tvDocente.setText(docente != null? docente.getNome(): "NULL");
                             tvDisciplina.setText(disciplina != null? disciplina.getNome(): "NULL");
                             tvCampus.setText(campus != null? campus.getNomeCampus(): "NULL");

@@ -7,6 +7,7 @@ import com.orm.SugarRecord;
  */
 public class Docente extends SugarRecord {
 
+    private int key;
     private String nome;
     private String SIAPE;
 
@@ -34,8 +35,20 @@ public class Docente extends SugarRecord {
         this.SIAPE = SIAPE;
     }
 
+    public int getKey() {
+        return key;
+    }
+
+    public void setKey(int key) {
+        this.key = key;
+    }
+
     @Override
     public String toString() {
-        return "Docente " + nome;
+        return "Docente{" +
+                "key=" + key +
+                ", nome='" + nome + '\'' +
+                ", SIAPE='" + SIAPE + '\'' +
+                '}';
     }
 }

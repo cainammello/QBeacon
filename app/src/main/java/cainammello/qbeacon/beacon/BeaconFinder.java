@@ -36,7 +36,7 @@ public class BeaconFinder implements BeaconConsumer {
 
         beaconManager.bind(this);
     }
-
+ 
     public void stop() {
         beaconManager.unbind(this);
     }

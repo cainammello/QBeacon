@@ -1,66 +1,51 @@
 package cainammello.qbeacon.model;
 
 import com.orm.SugarRecord;
+import com.orm.query.Select;
+
+import java.util.List;
 
 /**
  * Created by cainammello on 11/20/16.
  */
-public class Historico extends SugarRecord{
+public class Historico extends SugarRecord implements Comparable<Historico> {
 
     private int key;
     private int keyUpdated;
     private String modelUpdated;
-    private int timestamp;
+    private long timestamp;
 
-    public Historico () {
-
+    public Historico() {
     }
 
-    public Historico( int keyUpdated, String modelUpdated, int timestamp) {
-        this.keyUpdated = keyUpdated;
-        this.modelUpdated = modelUpdated;
-        this.timestamp = timestamp;
+    @Override
+    public long save() {
+        SugarRecord.deleteAll(Historico.class);
+        return super.save();
+    }
+
+    public static List<Historico> getAll() {
+        return Select.from(Historico.class).orderBy("timestamp").list();
     }
 
     public int getKey() {
         return key;
     }
 
-    public void setKey(int key) {
-        this.key = key;
-    }
-
     public int getKeyUpdated() {
         return keyUpdated;
-    }
-
-    public void setKeyUpdated(int keyUpdated) {
-        this.keyUpdated = keyUpdated;
     }
 
     public String getModelUpdated() {
         return modelUpdated;
     }
 
-    public void setModelUpdated(String modelUpdated) {
-        this.modelUpdated = modelUpdated;
-    }
-
-    public int getTimestamp() {
+    public long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(int timestamp) {
-        this.timestamp = timestamp;
-    }
-
     @Override
-    public String toString() {
-        return "Historico{" +
-                "key=" + key +
-                ", keyUpdated=" + keyUpdated +
-                ", modelUpdated='" + modelUpdated + '\'' +
-                ", timestamp=" + timestamp +
-                '}';
+    public int compareTo(Historico h) {
+        return timestamp < h.getTimestamp()? -1: timestamp > h.getKey()? 1: 0;
     }
 }

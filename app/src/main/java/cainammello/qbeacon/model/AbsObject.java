@@ -27,6 +27,14 @@ public abstract class AbsObject extends SugarRecord {
         return result.size() > 0? result.get(0): null;
     }
 
+    public <T extends AbsObject> long saveByKey() {
+        AbsObject o = AbsObject.getByKey(this.getClass(), getKey());
+        if(o != null) {
+            setId(o.getId());
+        }
+        return super.save();
+    }
+
     public int getKey() {
         return key;
     }
@@ -43,4 +51,10 @@ public abstract class AbsObject extends SugarRecord {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "AbsObject{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

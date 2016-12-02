@@ -40,12 +40,19 @@ public class HistoricoApi extends Api<Historico> {
         ((IHistoricoAPI)getCall(IHistoricoAPI.class)).getByKey(key).enqueue(callback);
     }
 
+    public void getByTimestamp(long timestamp, Callback callback) {
+        ((IHistoricoAPI)getCall(IHistoricoAPI.class)).getByTimestamp(timestamp).enqueue(callback);
+    }
+
     private interface IHistoricoAPI {
         @GET("historico")
         Call<List<Historico>> getAll();
 
         @GET("historico/{key}")
         Call<List<Historico>> getByKey(@Path("key") int key);
+
+        @GET("recentHistoric/{timestamp}")
+        Call<List<Historico>> getByTimestamp(@Path("timestamp") long timestamp);
     }
 
 }

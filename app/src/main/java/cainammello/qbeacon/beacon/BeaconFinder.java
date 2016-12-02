@@ -28,6 +28,8 @@ public class BeaconFinder implements BeaconConsumer {
     private BeaconFinderListener listener;
     private Activity activity;
 
+    private String lastUUIDBeacons = "";
+
     public void start(Activity activity) {
         this.activity = activity;
         beaconManager = BeaconManager.getInstanceForApplication(activity);
@@ -41,6 +43,25 @@ public class BeaconFinder implements BeaconConsumer {
         beaconManager.unbind(this);
     }
 
+    private void onBeaconReceived(Beacon beacon) {
+
+        String uuid = beacon.getId1().toString().replace("-", ""); //.replaceAll("(\\d{6})(\\d{2})", "$1");
+
+        if(!lastUUIDBeacons.equals(uuid)) {
+            //lastUUIDBeacons = uuid;
+
+            Log.i("DEBUG", "Rebendo Beacon: " + uuid);
+
+            if(listener != null)
+                listener.onBeaconFinded(beacon, uuid);
+
+        }
+
+    }
+
+    public void setListener(BeaconFinderListener listener) {
+        this.listener = listener;
+    }
 
     @Override
     public void onBeaconServiceConnect() {
@@ -74,7 +95,7 @@ public class BeaconFinder implements BeaconConsumer {
 
                     Beacon b = beacons.iterator().next();
                     while(b != null && listener != null) {
-                        listener.onBeaconFinded(b);
+                        onBeaconReceived(b);
                         b = beacons.iterator().next();
                     }
 
@@ -104,7 +125,7 @@ public class BeaconFinder implements BeaconConsumer {
     }
 
     public interface BeaconFinderListener {
-        void onBeaconFinded(Beacon beacon);
+        void onBeaconFinded(Beacon beacon, String uuid);
     }
 
 }

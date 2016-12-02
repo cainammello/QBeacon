@@ -1,10 +1,14 @@
 package cainammello.qbeacon.protocolo;
+
 import android.util.Log;
-import com.orm.SugarRecord;
+
+import cainammello.qbeacon.model.AbsObject;
 import cainammello.qbeacon.model.Bloco;
 import cainammello.qbeacon.model.Campus;
 import cainammello.qbeacon.model.Disciplina;
 import cainammello.qbeacon.model.Docente;
+import cainammello.qbeacon.model.Historico;
+import cainammello.qbeacon.model.Instituicao;
 import cainammello.qbeacon.model.Sala;
 
 /**
@@ -14,70 +18,98 @@ import cainammello.qbeacon.model.Sala;
 //métodos para extrair as informações do pacote enviado pelo beacon
 public class QBeaconProtocolo {
 
-    private QBeaconProtocolo() {}
+    private MessageSector[] messageSectors = new MessageSector[] {
+            new MessageSector(2, Sala.class),
+            new MessageSector(2, Bloco.class),
+            new MessageSector(2, Disciplina.class),
 
-    public static Sala extrairSala(String mensagem) {
+            // Hora inicio
+            new MessageSector(2, Integer.class), // ****************
 
-        //coloca em uma string o byte (id) referente a sala
-        String msg = mensagem.substring(0);
-        //tranforma o byte (id) em um inteiro
-        int byte1 = Character.getNumericValue(msg.charAt(0));
+            new MessageSector(4, Docente.class),
+            new MessageSector(2, Instituicao.class),
 
-        int value = byte1;
-        Log.i("DEBUG", "Find sala " + value);
+            // Minuto inicio
+            new MessageSector(2, Integer.class), // ****************
 
-        //retorna do banco o valor referente ao id recebido
-        return SugarRecord.findById(Sala.class, value);
+            // Aulas anterior e próxima
+            new MessageSector(2, Campus.class),
+            new MessageSector(2, Disciplina.class),
+            new MessageSector(2, Disciplina.class),
+
+            // Hora fim
+            new MessageSector(2, Integer.class), // ****************
+
+            new MessageSector(2, Historico.class),
+            new MessageSector(2, Object.class),
+            new MessageSector(2, Object.class),
+
+            // Minuto fim
+            new MessageSector(2, Integer.class), // ****************
+    };
+
+    public QBeaconProtocolo() {}
+
+    public Integer getValueFrom(String msg, int position) {
+
+        MessageSector sector = null;
+        int index = 0;
+        for (MessageSector m: messageSectors) {
+            if (m.type == Integer.class) {
+                position--;
+                if(position < 1 ){
+                    sector = m;
+                    break;
+                }
+            }
+            index += m.length;
+        }
+
+        String subst = msg.substring(index, index + sector.length);
+
+        int value = Integer.parseInt(subst, 16);
+        Log.i("DEBUG", "Str = " + subst + " : Value = " + Integer.parseInt(subst, 16));
+        return value;
+    }
+
+    public <T> T getObjectFrom(Class<T> type, String msg, int position) {
+
+        MessageSector sector = null;
+        int index = 0;
+        for (MessageSector m: messageSectors) {
+            if (m.type == type) {
+                position--;
+                if(position < 1 ){
+                    sector = m;
+                    break;
+                }
+            }
+            index += m.length;
+        }
+
+        String subst = msg.substring(index, index + sector.length);
+
+        int key = Integer.parseInt(subst, 16);
+
+        // Log.i("DEBUG", "Pegando chave de " + type.getName() + " com valor " + key);
+
+        return AbsObject.getByKey(type, key);
 
     }
 
-    public static Bloco extrairBloco(String mensagem) {
+    private class MessageSector {
 
-        String msg = mensagem.substring(1);
-        int byte1 = Character.getNumericValue(msg.charAt(0));
+        public Class type;
+        public int length;
 
-        int value = byte1;
-        Log.i("DEBUG", "Find bloco " + value);
+        public <T> MessageSector(Class<T> type) {
+            this(1, type);
+        }
 
-        return SugarRecord.findById(Bloco.class, value);
-
-    }
-
-    public static Docente extrairDocente(String mensagem) {
-
-        String msg = mensagem.substring(2);
-        int byte1 = Character.getNumericValue(msg.charAt(0));
-        int byte2 = Character.getNumericValue(msg.charAt(1));
-
-        int value = byte1 + 256 * byte2;
-
-        Log.i("DEBUG", "Find docente " + value);
-
-        return SugarRecord.findById(Docente.class, value);
-
-    }
-
-    public static Disciplina extrairDisciplina(String mensagem) {
-
-        String msg = mensagem.substring(4);
-        int byte1 = Character.getNumericValue(msg.charAt(0));
-
-        int value = byte1;
-        Log.i("DEBUG", "Find disciplina " + value);
-
-        return SugarRecord.findById(Disciplina.class, value);
-
-    }
-
-    public static Campus extrairCampus(String mensagem) {
-
-        String msg = mensagem.substring(5);
-        int byte1 = Character.getNumericValue(msg.charAt(0));
-
-        int value = byte1;
-        Log.i("DEBUG", "Find campus " + value);
-
-        return SugarRecord.findById(Campus.class, value);
+        public <T> MessageSector(int length, Class<T> type) {
+            this.length = length;
+            this.type = type;
+        }
 
     }
 

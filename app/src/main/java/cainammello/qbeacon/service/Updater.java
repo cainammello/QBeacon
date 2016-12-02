@@ -55,7 +55,7 @@ public class Updater {
                 @Override
                 public void run() {
 
-                    Log.i("DEBUG", "Salas: " + Select.from(Sala.class).list().toString());
+                    // Log.i("DEBUG", "Salas: " + Select.from(Sala.class).list().toString());
                     //Log.i("DEBUG", "Campus: " + SugarRecord.findAll(Campus.class).toString());
                     //Log.i("DEBUG", "Docente: " + SugarRecord.findAll(Docente.class).toString());
                     //Log.i("DEBUG", "Bloco: " + SugarRecord.findAll(Bloco.class).toString());
@@ -77,7 +77,7 @@ public class Updater {
                         @Override
                         public void onResponse(Call call, Response response) {
                             List<Historico> historicos = (List<Historico>) response.body();
-                            Log.i("DEBUG", "Histórico recebido with timestamp " + timestamp + " : " + historicos.toString());
+                            //Log.i("DEBUG", "Histórico recebido with timestamp " + timestamp + " : " + historicos.toString());
 
                             if(historicos.size() == 0) return;
 

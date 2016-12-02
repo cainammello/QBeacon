@@ -1,7 +1,5 @@
 package cainammello.qbeacon.protocolo;
 
-import android.util.Log;
-
 import cainammello.qbeacon.model.AbsObject;
 import cainammello.qbeacon.model.Bloco;
 import cainammello.qbeacon.model.Campus;
@@ -68,7 +66,7 @@ public class QBeaconProtocolo {
         String subst = msg.substring(index, index + sector.length);
 
         int value = Integer.parseInt(subst, 16);
-        Log.i("DEBUG", "Str = " + subst + " : Value = " + Integer.parseInt(subst, 16));
+        // Log.i("DEBUG", "Str = " + subst + " : Value = " + Integer.parseInt(subst, 16));
         return value;
     }
 

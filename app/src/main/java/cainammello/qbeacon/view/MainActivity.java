@@ -2,6 +2,7 @@ package cainammello.qbeacon.view;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TextView;
 
 import com.orm.SugarContext;
@@ -59,6 +60,12 @@ public class MainActivity extends AppCompatActivity implements BeaconFinder.Beac
     @BindView (R.id.fim)
     TextView tvFim;
 
+    @BindView (R.id.view_info)
+    View vInfo;
+
+    @BindView (R.id.view_progress)
+    View vProgress;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,16 +117,18 @@ public class MainActivity extends AppCompatActivity implements BeaconFinder.Beac
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                tvSala.setText(sala != null? sala.getName(): "NULL");
-                tvBloco.setText(bloco != null? bloco.getName(): "NULL");
+                vProgress.setVisibility(View.GONE);
+                vInfo.setVisibility(View.VISIBLE);
+                tvSala.setText(sala != null? "Sala " + sala.getName(): "NULL");
+                tvBloco.setText(bloco != null? "Bloco " + bloco.getName(): "NULL");
                 tvDocente.setText(docente != null? docente.getName(): "NULL");
                 tvDisciplina.setText(disciplina != null? disciplina.getName(): "NULL");
                 tvInstituicao.setText(instituicao != null? instituicao.getName(): "NULL");
                 tvCampus.setText(campus != null? campus.getName(): "NULL");
                 tvAulaAnterior.setText(aulaAnt != null? aulaAnt.getName(): "NULL");
                 tvAulaProxima.setText(aulaProx != null? aulaProx.getName(): "NULL");
-                tvInicio.setText(horaI + ":" + minI);
-                tvFim.setText(horaF + ":" + minF);
+                tvInicio.setText(String.format("%02d", horaI) + ":" + String.format("%02d", minI));
+                tvFim.setText(String.format("%02d", horaF) + ":" + String.format("%02d", minF));
             }
         });
     }

@@ -47,7 +47,7 @@ public class BeaconFinder implements BeaconConsumer {
 
         String uuid = beacon.getId1().toString().replace("-", ""); //.replaceAll("(\\d{6})(\\d{2})", "$1");
 
-        if(!lastUUIDBeacons.equals(uuid)) {
+        if(true || !lastUUIDBeacons.equals(uuid)) {
             //lastUUIDBeacons = uuid;
 
             Log.i("DEBUG", "Rebendo Beacon: " + uuid);

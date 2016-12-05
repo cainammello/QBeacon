@@ -21,7 +21,7 @@
         <meta-data android:name="QUERY_LOG" android:value="true" />
         <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="cainammello.qbeacon.model" />
 
-        <activity android:name=".view.MainActivity">
+        <activity android:name=".view.MainActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

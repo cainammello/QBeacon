@@ -28,13 +28,19 @@ public class BeaconFinder implements BeaconConsumer {
     private BeaconFinderListener listener;
     private Activity activity;
 
-    private String lastUUIDBeacons = "";
+    private long lastUUIDTimestamp = 0l;
 
     public void start(Activity activity) {
         this.activity = activity;
         beaconManager = BeaconManager.getInstanceForApplication(activity);
-        //informar para a aplicação qual tipo de beacon ela vai escanear (no caso Ibeacons)
-        beaconManager.getBeaconParsers().add(new BeaconParser(). setBeaconLayout("m:0-3=4c000215,i:4-19,i:20-21,i:22-23,p:24-24"));
+        // informar para a aplicação qual tipo de beacon ela vai escanear (no caso Ibeacons)
+        // beaconManager.getBeaconParsers().add(new BeaconParser(). setBeaconLayout("m:0-3=4c000215,i:4-19,i:20-21,i:22-23,p:24-24"));
+        beaconManager.getBeaconParsers().add(new BeaconParser(). setBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24"));
+        beaconManager.setUseTrackingCache(false);
+        beaconManager.setRegionStatePeristenceEnabled(false);
+        beaconManager.setMaxTrackingAge(0);
+        beaconManager.setBackgroundScanPeriod(1100l);
+        beaconManager.setBackgroundBetweenScanPeriod(5000l);
 
         beaconManager.bind(this);
     }
@@ -47,13 +53,15 @@ public class BeaconFinder implements BeaconConsumer {
 
         String uuid = beacon.getId1().toString().replace("-", ""); //.replaceAll("(\\d{6})(\\d{2})", "$1");
 
-        if(true || !lastUUIDBeacons.equals(uuid)) {
-            //lastUUIDBeacons = uuid;
+        if(System.currentTimeMillis() - lastUUIDTimestamp >= 5000) {
+            lastUUIDTimestamp = System.currentTimeMillis();
 
             Log.i("DEBUG", "Rebendo Beacon: " + uuid);
 
             if(listener != null)
                 listener.onBeaconFinded(beacon, uuid);
+            else
+                Log.i("DEBUG", "Sem receptores para os beacons!");
 
         }
 
@@ -65,6 +73,13 @@ public class BeaconFinder implements BeaconConsumer {
 
     @Override
     public void onBeaconServiceConnect() {
+        resetBeacon();
+    }
+
+    private void resetBeacon() {
+        beaconManager.removeAllRangeNotifiers();
+        beaconManager.removeAllMonitorNotifiers();
+
         beaconManager.setMonitorNotifier(new MonitorNotifier() {
 
             @Override
@@ -88,25 +103,26 @@ public class BeaconFinder implements BeaconConsumer {
             beaconManager.startMonitoringBeaconsInRegion(new Region("myMonitoringUniqueId", null, null, null));
         } catch (RemoteException e) {    }
 
-        beaconManager.setRangeNotifier(new RangeNotifier() {
+
+        beaconManager.addRangeNotifier(new RangeNotifier() {
             @Override
             public void didRangeBeaconsInRegion(Collection<Beacon> beacons, Region region) {
                 if (beacons.size() > 0) {
 
                     Beacon b = beacons.iterator().next();
-                    while(b != null && listener != null) {
+                    while (b != null) {
                         onBeaconReceived(b);
                         b = beacons.iterator().next();
                     }
 
                 }
             }
+
         });
 
         try {
-            beaconManager.startRangingBeaconsInRegion(new Region("myRangingUniqueId", null, null, null));
+            beaconManager.startRangingBeaconsInRegion(new Region("QBeaconRangingId", null, null, null));
         } catch (RemoteException e) {    }
-
     }
 
     @Override

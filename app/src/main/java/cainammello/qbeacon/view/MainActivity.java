@@ -2,9 +2,13 @@ package cainammello.qbeacon.view;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.orm.SugarContext;
 
 import org.altbeacon.beacon.Beacon;
@@ -61,11 +65,12 @@ public class MainActivity extends AppCompatActivity implements BeaconFinder.Beac
     TextView tvFim;
 
     @BindView (R.id.view_info)
-    View vInfo;
+    LinearLayout vInfo;
 
     @BindView (R.id.view_progress)
-    View vProgress;
+    ProgressBar vProgress;
 
+    boolean dialogShowed = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,19 +83,32 @@ public class MainActivity extends AppCompatActivity implements BeaconFinder.Beac
         //iniciando o banco de dados com o SugarContext
         SugarContext.init(this);
 
+        Log.i("DEBUG", "On create Activity");
         updater = Updater.getInstance();
-        updater.start();
         beaconFinder = new BeaconFinder();
         beaconFinder.setListener(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        updater.start();
         beaconFinder.start(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        updater.stop();
+        beaconFinder.stop();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         SugarContext.terminate();
-        updater.stop();
-        beaconFinder.stop();
     }
 
     @Override
@@ -110,25 +128,46 @@ public class MainActivity extends AppCompatActivity implements BeaconFinder.Beac
         final Integer horaI = beaconProtocolo.getValueFrom(uuid, 1);
         final Integer minI = beaconProtocolo.getValueFrom(uuid, 2);
         final Integer horaF = beaconProtocolo.getValueFrom(uuid, 3);
-        final Integer minF = beaconProtocolo.getValueFrom(uuid, 4);
-
+        final Integer minF = beaconProtocolo.getValueFrom(uuid, 6);
 
         //passa os valores dos objetos para os componentes da tela
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
+
+                Log.i("DEBUG", "Atualizando dados: " + vInfo.getVisibility());
+
+                vProgress.clearAnimation();
                 vProgress.setVisibility(View.GONE);
+                vProgress.invalidate();
+                vInfo.clearAnimation();
                 vInfo.setVisibility(View.VISIBLE);
-                tvSala.setText(sala != null? "Sala " + sala.getName(): "NULL");
-                tvBloco.setText(bloco != null? "Bloco " + bloco.getName(): "NULL");
-                tvDocente.setText(docente != null? docente.getName(): "NULL");
-                tvDisciplina.setText(disciplina != null? disciplina.getName(): "NULL");
-                tvInstituicao.setText(instituicao != null? instituicao.getName(): "NULL");
-                tvCampus.setText(campus != null? campus.getName(): "NULL");
-                tvAulaAnterior.setText(aulaAnt != null? aulaAnt.getName(): "NULL");
-                tvAulaProxima.setText(aulaProx != null? aulaProx.getName(): "NULL");
+                vInfo.invalidate();
+
+                tvSala.setText(sala != null? "Sala " + sala.getName(): "...");
+                tvBloco.setText(bloco != null? "Bloco " + bloco.getName(): "...");
+                tvDocente.setText(docente != null? docente.getName(): "...");
+                tvDisciplina.setText(disciplina != null? disciplina.getName(): "...");
+                tvInstituicao.setText(instituicao != null? instituicao.getName(): "...");
+                tvCampus.setText(campus != null? campus.getName(): "...");
+                tvAulaAnterior.setText(aulaAnt != null? aulaAnt.getName(): "...");
+                tvAulaProxima.setText(aulaProx != null? aulaProx.getName(): "...");
                 tvInicio.setText(String.format("%02d", horaI) + ":" + String.format("%02d", minI));
                 tvFim.setText(String.format("%02d", horaF) + ":" + String.format("%02d", minF));
+
+                if(! dialogShowed && (sala == null || bloco == null || docente == null || disciplina == null
+                        || instituicao == null || campus == null || aulaAnt == null
+                        || aulaProx == null)) {
+
+                    dialogShowed = true;
+                    new MaterialDialog.Builder(MainActivity.this)
+                            .title("Dados desatualizados")
+                            .content("Conecte com a internet e atualize seus dados!")
+                            .positiveText("OK")
+                            .show();
+
+                }
+
             }
         });
     }

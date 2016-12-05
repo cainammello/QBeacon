@@ -39,8 +39,8 @@ public class QBeaconProtocolo {
             new MessageSector(2, Integer.class), // ****************
 
             new MessageSector(2, Historico.class),
-            new MessageSector(2, Object.class),
-            new MessageSector(2, Object.class),
+            new MessageSector(2, Integer.class),
+            new MessageSector(2, Integer.class),
 
             // Minuto fim
             new MessageSector(2, Integer.class), // ****************
@@ -55,7 +55,7 @@ public class QBeaconProtocolo {
         for (MessageSector m: messageSectors) {
             if (m.type == Integer.class) {
                 position--;
-                if(position < 1 ){
+                if(position < 1){
                     sector = m;
                     break;
                 }
@@ -65,7 +65,7 @@ public class QBeaconProtocolo {
 
         String subst = msg.substring(index, index + sector.length);
 
-        int value = Integer.parseInt(subst, 16);
+        int value = Integer.parseInt(subst, 16) - 1;
         // Log.i("DEBUG", "Str = " + subst + " : Value = " + Integer.parseInt(subst, 16));
         return value;
     }

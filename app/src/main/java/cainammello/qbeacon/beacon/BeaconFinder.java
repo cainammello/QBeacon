@@ -123,6 +123,9 @@ public class BeaconFinder implements BeaconConsumer {
         try {
             beaconManager.startRangingBeaconsInRegion(new Region("QBeaconRangingId", null, null, null));
         } catch (RemoteException e) {    }
+
+        if(listener != null)
+            listener.onScanStarted();
     }
 
     @Override
@@ -141,6 +144,7 @@ public class BeaconFinder implements BeaconConsumer {
     }
 
     public interface BeaconFinderListener {
+        void onScanStarted();
         void onBeaconFinded(Beacon beacon, String uuid);
     }
 

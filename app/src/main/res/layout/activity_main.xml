@@ -1,343 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".view.MainActivity"
-    android:background="#EEE">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="cainammello.qbeacon.view.BeaconActivity">
 
-        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite a distância em metros. Ex.: 2.5"
+        android:inputType="numberDecimal"
+        android:id="@+id/distance" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Iniciar teste"
+        android:layout_below="@id/distance"
+        android:layout_marginTop="16px"
+        android:id="@+id/begin_test"
+        android:onClick="beginTest"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Remover resultados"
+        android:layout_below="@id/begin_test"
+        android:layout_marginTop="16px"
+        android:id="@+id/remove_test"
+        android:onClick="removeTests"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/remove_test">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="24px"
+                android:text="Resultados"
+                android:layout_marginTop="16px"
+                android:layout_marginBottom="8px"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Os resultado aparecerão aqui..."
+                android:id="@+id/result"/>
+        </LinearLayout>
 
-                    <ImageView
-                        android:id="@+id/logo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginTop="16dp"
-                        android:src="@drawable/qbeacon_icon"
-                        android:layout_gravity="center_horizontal"/>
+    </ScrollView>
 
-                    <LinearLayout
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="24dp"
-                        android:gravity="center">
-
-                        <ProgressBar
-                            android:id="@+id/view_progress"
-                            android:indeterminate="true"
-                            android:layout_width="52dp"
-                            android:layout_height="52dp"
-                            android:layout_gravity="center_horizontal"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/view_info"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:layout_margin="8dp">
-
-
-                        <android.support.v7.widget.CardView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:padding="16dp"
-                                android:orientation="vertical">
-
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    android:layout_marginBottom="16dp">
-
-                                    <TextView
-                                        android:id="@+id/instituicao"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Instituicao"
-                                        android:textSize="28dp"
-                                        android:textStyle="bold"
-                                        android:textColor="@color/colorPrimary"/>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text=" - "
-                                        android:textSize="28dp"
-                                        android:textStyle="bold"
-                                        android:textColor="@color/colorPrimary"/>
-
-                                    <TextView
-                                        android:id="@+id/campus"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Campus"
-                                        android:textSize="28dp"
-                                        android:textStyle="bold"
-                                        android:textColor="@color/colorPrimary"/>
-
-                                </LinearLayout>
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Você está em:"
-                                    android:textSize="18dp"
-                                    android:textStyle="normal"
-                                    android:textColor="#777"/>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-                                    <TextView
-                                        android:id="@+id/bloco"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Bloco"
-                                        android:textSize="24dp"
-                                        android:textStyle="bold"
-                                        android:textColor="@color/colorPrimary"/>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text=" - "
-                                        android:textSize="24dp"
-                                        android:textStyle="bold"
-                                        android:textColor="@color/colorPrimary"/>
-
-                                    <TextView
-                                        android:id="@+id/sala"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Sala"
-                                        android:textSize="24dp"
-                                        android:textStyle="bold"
-                                        android:textColor="@color/colorPrimary"/>
-
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                        </android.support.v7.widget.CardView>
-
-
-                        <android.support.v7.widget.CardView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="16dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:padding="16dp"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Aula atual:"
-                                    android:textSize="18dp"
-                                    android:textStyle="normal"
-                                    android:textColor="#777"/>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    android:layout_marginBottom="16dp">
-
-                                    <TextView
-                                        android:id="@+id/disciplina"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Disciplina"
-                                        android:textSize="24dp"
-                                        android:textStyle="bold"
-                                        android:textColor="@color/colorPrimary"/>
-
-                                </LinearLayout>
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Professor(a):"
-                                    android:textSize="18dp"
-                                    android:textStyle="normal"
-                                    android:textColor="#777"/>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    android:layout_marginBottom="16dp">
-
-                                    <TextView
-                                        android:id="@+id/docente"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Disciplina"
-                                        android:textSize="24dp"
-                                        android:textStyle="bold"
-                                        android:textColor="@color/colorPrimary"/>
-
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                        </android.support.v7.widget.CardView>
-
-                        <android.support.v7.widget.CardView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="16dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:padding="16dp"
-                                android:orientation="vertical">
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Horário:"
-                                    android:textSize="18dp"
-                                    android:textStyle="normal"
-                                    android:textColor="#777"/>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    android:layout_marginBottom="16dp">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text=""
-                                        android:textSize="24dp"
-                                        android:textStyle="bold"
-                                        android:textColor="@color/colorPrimary"/>
-
-                                    <TextView
-                                        android:id="@+id/inicio"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Início"
-                                        android:textSize="24dp"
-                                        android:textStyle="bold"
-                                        android:textColor="@color/colorPrimary"/>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text=" às "
-                                        android:textSize="24dp"
-                                        android:textStyle="bold"
-                                        android:textColor="@color/colorPrimary"/>
-
-                                    <TextView
-                                        android:id="@+id/fim"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Fim"
-                                        android:textSize="24dp"
-                                        android:textStyle="bold"
-                                        android:textColor="@color/colorPrimary"/>
-
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                        </android.support.v7.widget.CardView>
-
-                        <android.support.v7.widget.CardView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="16dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:padding="16dp"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Aula anterior:"
-                                    android:textSize="18dp"
-                                    android:textStyle="normal"
-                                    android:textColor="#777"/>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    android:layout_marginBottom="16dp">
-
-                                    <TextView
-                                        android:id="@+id/aulaAnterior"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Disciplina"
-                                        android:textSize="24dp"
-                                        android:textStyle="bold"
-                                        android:textColor="@color/colorPrimary"/>
-
-                                </LinearLayout>
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Próxima aula:"
-                                    android:textSize="18dp"
-                                    android:textStyle="normal"
-                                    android:textColor="#777"/>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    android:layout_marginBottom="16dp">
-
-                                    <TextView
-                                        android:id="@+id/aulaProxima"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Disciplina"
-                                        android:textSize="24dp"
-                                        android:textStyle="bold"
-                                        android:textColor="@color/colorPrimary"/>
-
-                                </LinearLayout>
-                            </LinearLayout>
-
-                        </android.support.v7.widget.CardView>
-
-                    </LinearLayout>
-                </LinearLayout>
-        </ScrollView>
-</LinearLayout>
+</RelativeLayout>

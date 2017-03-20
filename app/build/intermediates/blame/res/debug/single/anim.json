@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/anim/popup_exit.xml",
+        "source": "/home/cainammello/.android/build-cache/a1e8ba9eaf8db5a6bf47153f64c54700d2cd1720/output/res/anim/popup_exit.xml"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
+        "source": "/home/cainammello/.android/build-cache/6aecec1b88ae1c8eaebc71222e948127fcc13dbe/output/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
+        "source": "/home/cainammello/.android/build-cache/6aecec1b88ae1c8eaebc71222e948127fcc13dbe/output/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
+        "source": "/home/cainammello/.android/build-cache/6aecec1b88ae1c8eaebc71222e948127fcc13dbe/output/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
+        "source": "/home/cainammello/.android/build-cache/6aecec1b88ae1c8eaebc71222e948127fcc13dbe/output/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
+        "source": "/home/cainammello/.android/build-cache/6aecec1b88ae1c8eaebc71222e948127fcc13dbe/output/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/home/cainammello/.android/build-cache/6aecec1b88ae1c8eaebc71222e948127fcc13dbe/output/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
+        "source": "/home/cainammello/.android/build-cache/6aecec1b88ae1c8eaebc71222e948127fcc13dbe/output/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
+        "source": "/home/cainammello/.android/build-cache/6aecec1b88ae1c8eaebc71222e948127fcc13dbe/output/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/home/cainammello/.android/build-cache/6aecec1b88ae1c8eaebc71222e948127fcc13dbe/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/anim/popup_enter.xml",
+        "source": "/home/cainammello/.android/build-cache/a1e8ba9eaf8db5a6bf47153f64c54700d2cd1720/output/res/anim/popup_enter.xml"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
+        "source": "/home/cainammello/.android/build-cache/6aecec1b88ae1c8eaebc71222e948127fcc13dbe/output/res/anim/abc_popup_enter.xml"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/anim/decelerate_cubic.xml",
+        "source": "/home/cainammello/.android/build-cache/a1e8ba9eaf8db5a6bf47153f64c54700d2cd1720/output/res/anim/decelerate_cubic.xml"
+    }
+]

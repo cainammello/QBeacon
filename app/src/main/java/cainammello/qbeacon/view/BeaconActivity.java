@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -135,7 +136,7 @@ public class BeaconActivity extends AppCompatActivity implements BeaconFinder.Be
     @Override
     public void onBackPressed() {
         Toast.makeText(this, "Teste cancelado!", Toast.LENGTH_SHORT).show();
-        //teste.save();
+        teste.save();
         super.onBackPressed();
     }
 

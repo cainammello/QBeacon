@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/layout-v14/md_stub_progress_indeterminate_horizontal.xml",
+        "source": "/home/cainammello/.android/build-cache/a1e8ba9eaf8db5a6bf47153f64c54700d2cd1720/output/res/layout-v14/md_stub_progress_indeterminate_horizontal.xml"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/layout-v14/md_stub_progress.xml",
+        "source": "/home/cainammello/.android/build-cache/a1e8ba9eaf8db5a6bf47153f64c54700d2cd1720/output/res/layout-v14/md_stub_progress.xml"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/layout-v14/md_stub_progress_indeterminate.xml",
+        "source": "/home/cainammello/.android/build-cache/a1e8ba9eaf8db5a6bf47153f64c54700d2cd1720/output/res/layout-v14/md_stub_progress_indeterminate.xml"
+    }
+]

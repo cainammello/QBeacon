@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_prof.png",
+        "source": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/src/main/res/mipmap-hdpi/ic_prof.png"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_hora.png",
+        "source": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/src/main/res/mipmap-hdpi/ic_hora.png"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
+        "source": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_instituicao.png",
+        "source": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/src/main/res/mipmap-hdpi/ic_instituicao.png"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_book.png",
+        "source": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/src/main/res/mipmap-hdpi/ic_book.png"
+    }
+]

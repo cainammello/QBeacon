@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/d44fddd29effd8e8f3f52a753d3fb49af5cb3037/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/classes_dc5d361118dbb2933ee834ff00468bd1b6748bd6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/978be066d0f3593fd3744d7c3a002f9116f54b21/output/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_5f00020a40aab26b087021415183022cf67c79f5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.8.0/5ea7af56cc7c567ed9856d99efb30740e9b17ff/okio-1.8.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/okio-1.8.0_de63052ab78ce056b4fc591258d2596d0d38c6b0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/support-annotations-25.0.0_fbf34109e9af91ff3ca137564d3cf39c5199e61f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/37b7d3a0dc51afa12dd9915d86808a06dd530187/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/classes_8c2f13deb5283e11fcec7b62f64243d6a75ac4cc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/68ce737d74260a885b9575c742bbf618e2d69b5b/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/classes_f9c173432bb685f54f35de4957f6afb859037be7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/a1e8ba9eaf8db5a6bf47153f64c54700d2cd1720/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="16795a75616fe3ba9df9ae4af09202145e3a26dc">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/classes_a0f58d9b9f906f50ec8763ac612060a7a7a88179.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/2e2265ddfbe7f98a90391877c6920a7e0324cf3a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ac045b53684345f4ec8468477e8fc5034d0d2bfd">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/classes_09e9b2c181fd47f0310117a8c5bcd502f682c1c9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/0fdab9c2e155b7ac9a1275805301bda42c958b35/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a07818a1ecabdb149998823429cce555af4b9cba">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/classes_b71629269f5f79d343b6b5e1efaee2b201d2a5b8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/dd31b94e361a6c12d6e60d45e9d8f5d4492896c4/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b1c4132dd2d386a819199b7e738c4d6e60897670">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/classes_26b24f8f137411db8dea3b5c8a6d2ab5fac7f950.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/9bd8ca5ed2d51d9f3af6f3338ddd95668d0d0dc5/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/classes_2f7f18e90ebace21c3358a4290747edfd38ffce5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/978be066d0f3593fd3744d7c3a002f9116f54b21/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/classes_ef9abc03f58a1f8e31f97b68ad6364b70c401a67.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.3.0/2b802460eea20f8f2ad9c08c74e0f14718e88aa9/okhttp-3.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/okhttp-3.3.0_7c276b4512a581648e7007ac858643a90fa148ec.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/cc3230e9099edb04c05e6a7fd1688cc6460b76b7/output/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_fac2cc5f4bd8d00ab3fcb1fc3454d750aeea6d37.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.4.0/ea392375cf9ff59234a82e7928a204215ccc98cd/butterknife-annotations-8.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ea392375cf9ff59234a82e7928a204215ccc98cd">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/butterknife-annotations-8.4.0_9a02d3c1eeef9fda6e0a53affc59556df83755e6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/be2157b4ba81650c837ade39aa92ba961c44f127/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6ac094121e75b4b87432beb9305d70c68ec6dcab">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/classes_6350680623bdca22419f015548285892f6d8c73b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/be2157b4ba81650c837ade39aa92ba961c44f127/output/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="67355078cd30daae43f62ba47a4663ee6edb976e">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_07bb131b214d9b019b0707c72ee3d4710a747914.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/e39789c0e799cbedb16a58ada212d74536e70cb6/output/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_b0818e8f53be69d5708d7bb800f25472d424188a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.1.0/2de7cd8b95b7021b1d597f049bcb422055119f2c/retrofit-2.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/retrofit-2.1.0_78f406524751f488c7118746ac328c6b0569be0d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/416355cd538ec7c3802b4b273ab72e797b999f33/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a846ddbf5bf88dee5f89d4dffe22c864f576d9b0">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/classes_ceb78ce40971be9a5ae8a4906d3084f1b9120bef.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/bf1a0cb7b76a6b7f80fb90ea02f35a35092d38cc/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5e497d60f0cb6ce87c458ac5420a46d0fed49bd0">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/classes_813163f881da23474e996784cce0ac1d44317471.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/9bd8ca5ed2d51d9f3af6f3338ddd95668d0d0dc5/output/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_5a9ab91f3104254d97a1d75e05e08829b87423d1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/cc3230e9099edb04c05e6a7fd1688cc6460b76b7/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/classes_e5e640bf1663150e6fa62b3a585b8f5870392cd4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/a3efaac67f3394b0ace6980476fa5e08077170cf/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="96e33a7aaee00ab64270e2a9887b8f9ef32c8b73">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/classes_2d3e2e561daa09a2409b2fe73dc5941789063a16.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/6aecec1b88ae1c8eaebc71222e948127fcc13dbe/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/classes_5a224a8d906e13bb228f3ab79cf820d2e363fa27.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/e39789c0e799cbedb16a58ada212d74536e70cb6/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/classes_75240eebdafe28fa4892d764c44d779d23f0eddc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.0.0-beta3/8bff75d7360aaa3866f1e6949c877dfcc2b3d3e2/converter-gson-2.0.0-beta3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8bff75d7360aaa3866f1e6949c877dfcc2b3d3e2">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/converter-gson-2.0.0-beta3_4ccc890c287d773a3ba76a5a0b0de4d21508e293.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.4/695b63d702f505b9b916e02272e3b6381bade7f/gson-2.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0695b63d702f505b9b916e02272e3b6381bade7f">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/gson-2.4_e92b7beac7cdc9a3fb85d8567e9c959b5603e422.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/f763ca39f42eb9ab28811cbdced3822bb9a09540/output/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_57ed030755ff7490cb7c9e1dc30f4ae2936e4761.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/android-studio/gradle/m2repository/com/google/guava/guava/18.0/guava-18.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="cce0823396aa693798f8882e64213b1772032b09">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/guava-18.0_22511b3aa2e29954f0376cefadfc66819ade9dd4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cainammello/.android/build-cache/f763ca39f42eb9ab28811cbdced3822bb9a09540/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/pre-dexed/debug/classes_6038192ee25b05c9254fe6fb0821a7b73c1afffc.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,4 @@
+#Sun Mar 19 22:42:48 BRT 2017
+base.0=/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4
+renamed.0=classes.dex
+file.0=/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex

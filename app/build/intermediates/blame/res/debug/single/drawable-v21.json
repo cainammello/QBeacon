@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/drawable-v21/md_btn_shape.xml",
+        "source": "/home/cainammello/.android/build-cache/a1e8ba9eaf8db5a6bf47153f64c54700d2cd1720/output/res/drawable-v21/md_btn_shape.xml"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
+        "source": "/home/cainammello/.android/build-cache/6aecec1b88ae1c8eaebc71222e948127fcc13dbe/output/res/drawable-v21/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
+        "source": "/home/cainammello/.android/build-cache/6aecec1b88ae1c8eaebc71222e948127fcc13dbe/output/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/home/cainammello/.android/build-cache/6aecec1b88ae1c8eaebc71222e948127fcc13dbe/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/drawable-v21/md_btn_selector_ripple_dark.xml",
+        "source": "/home/cainammello/.android/build-cache/a1e8ba9eaf8db5a6bf47153f64c54700d2cd1720/output/res/drawable-v21/md_btn_selector_ripple_dark.xml"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/home/cainammello/.android/build-cache/6aecec1b88ae1c8eaebc71222e948127fcc13dbe/output/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/drawable-v21/md_btn_selector_ripple.xml",
+        "source": "/home/cainammello/.android/build-cache/a1e8ba9eaf8db5a6bf47153f64c54700d2cd1720/output/res/drawable-v21/md_btn_selector_ripple.xml"
+    }
+]

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/home/cainammello/.android/build-cache/6aecec1b88ae1c8eaebc71222e948127fcc13dbe/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "/home/cainammello/MEGAsync/AndroidStudioProjects/QBeacon/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/home/cainammello/.android/build-cache/6aecec1b88ae1c8eaebc71222e948127fcc13dbe/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
+    }
+]
